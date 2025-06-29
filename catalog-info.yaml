@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: gphnl2w3t-python-gitops
+  description: This is GitOps manifest for gphnl2w3t-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=gphnl2w3t-python
+    backstage.io/kubernetes-id: gphnl2w3t-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: gphnl2w3t-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:gphnl2w3t-python
